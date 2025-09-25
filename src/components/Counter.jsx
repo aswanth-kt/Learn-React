@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function Counter(props) {
+function Counter() {
+    let [count, setCount] = useState(0);
+
   return (
     <div>
-        <h1>Counter: {props.count}</h1>
+      <h2>Counter: {count} </h2>
+      <button onClick={() => { setCount(count+1) }} >Increment</button>
     </div>
   )
 }
