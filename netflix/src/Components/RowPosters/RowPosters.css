@@ -17,9 +17,21 @@
 .poster{
     max-height: 250px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .samllPoster{
     max-height: 150px;
     margin-right: 10px;
+    cursor: pointer;
+}
+
+.poster:hover{
+    transform: scale(1.1);
+    transition: 0.4s ease-in-out, 0.4s ease-in-out;
+}
+
+.samllPoster:hover{
+    transform: scale(1.09);
+    transition: 0.4s ease-in-out, 0.4s ease-in-out;
 }
