@@ -1,24 +1,30 @@
 import About from "./Container/About"
 import Sales from "./Container/Sales"
 // import { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
+import { Route, Routes, Link, useNavigate } from "react-router-dom"
 
 function App() {
   // const [state, setState] = useState();
+  const navigate = useNavigate();
+  // console.log("Navigate:", navigate)
 
   return (
-    <Router>
+    // <Router>
     <div>
-      
-
 
       {/* <button onClick={() => setState("about")} >About</button>
       <button onClick={() => setState("sales")} >Sales</button> */}
       {/* <a href="/about">About</a> */}
 
-      <Link to="/" >Home</Link> <br />
+      {/* Using Link */}
+      {/* <Link to="/" >Home</Link> <br />
       <Link to="/about" >About Page</Link> <br />
-      <Link to="/sales" >Sales Page</Link> <br />
+      <Link to="/sales" >Sales Page</Link> <br /> */}
+
+      {/* using Button */}
+        <button onClick={() => navigate('/')} > Home </button>
+        <button onClick={() => navigate('/about')} > About </button>
+        <button onClick={() => navigate('/sales')} > Sales </button>
       
       <Routes>
 
@@ -29,7 +35,7 @@ function App() {
       </Routes>
     
     </div>
-    </Router>
+    // </Router>
   );
 }
 
