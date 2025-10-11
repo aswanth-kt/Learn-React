@@ -1,10 +1,10 @@
 import About from "./Container/About"
 import Sales from "./Container/Sales"
-// import { useState } from "react";
-import { Route, Routes, Link, useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom"
 
 function App() {
-  // const [state, setState] = useState();
+  const [state, setState] = useState("This is state value : 100");
   const navigate = useNavigate();
   // console.log("Navigate:", navigate)
 
@@ -29,7 +29,7 @@ function App() {
       <Routes>
 
         <Route element={ <h1>Home Page</h1> } path="/" />
-        <Route element={<About/>} path="/about" />
+        <Route element={<About data={state} />} path="/about" />
         <Route element={<Sales/>} path="/sales" />
         
       </Routes>
