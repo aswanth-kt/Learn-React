@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import LayerOne from "../components/LayerOne";
 
-function About (props) {
+function About () {
     return(
+        
         <div style={{backgroundColor: "blue"}} >
             <h1>Its About Page</h1>
-            <LayerOne data={props.data} />
+            <LayerOne />
         </div>
     )
 }

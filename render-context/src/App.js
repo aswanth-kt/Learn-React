@@ -2,9 +2,10 @@ import About from "./Container/About"
 import Sales from "./Container/Sales"
 import { useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom"
+import {AppContext} from "./AppContext"
 
 function App() {
-  const [state, setState] = useState("This is state value : 100");
+  const [state, setState] = useState("This is state value using context : 100");
   const navigate = useNavigate();
   // console.log("Navigate:", navigate)
 
@@ -26,13 +27,15 @@ function App() {
         <button onClick={() => navigate('/about')} > About </button>
         <button onClick={() => navigate('/sales')} > Sales </button>
       
-      <Routes>
 
-        <Route element={ <h1>Home Page</h1> } path="/" />
-        <Route element={<About data={state} />} path="/about" />
-        <Route element={<Sales/>} path="/sales" />
-        
-      </Routes>
+      <AppContext.Provider value={state} >
+        <Routes>
+          <Route element={ <h1>Home Page</h1> } path="/" />
+          <Route element={<About/>} path="/about" />
+          <Route element={<Sales/>} path="/sales" />
+        </Routes>
+      </AppContext.Provider>
+
     
     </div>
     // </Router>
